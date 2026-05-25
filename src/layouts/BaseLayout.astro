@@ -29,6 +29,13 @@ const canonical = new URL(path, SITE.url).toString();
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title={SITE.author} href="/rss.xml" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+    />
+
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.author} />
     <meta property="og:locale" content={SITE.locale} />

@@ -1,31 +1,33 @@
 export type SkillGroup = {
   heading: string;
-  note?: string;
-  items: string[];
+  items: string;
 };
 
 export const SKILLS: SkillGroup[] = [
   {
-    heading: '個人開発で使用',
-    note: '実務経験はこれから。個人開発を通じて手を動かしてきた領域です。',
-    items: [
-      'Ruby / Ruby on Rails',
-      'TypeScript / React',
-      'Hotwire (Turbo / Stimulus)',
-      'Tailwind CSS',
-      'PostgreSQL',
-      'Supabase',
-      'Docker',
-      'GitHub Actions',
-    ],
+    heading: 'BACKEND',
+    items: 'Ruby on Rails 8 / Ruby 3.4 / PostgreSQL / Solid Queue',
   },
   {
-    heading: 'これから業務で扱う技術',
-    note: '入社後、フルスタックに広げていく予定の技術スタック。',
-    items: ['Nuxt', 'Next.js', 'Python', 'Ruby on Rails'],
+    heading: 'FRONTEND',
+    items: 'TypeScript / React 19 / Vite / Tailwind CSS / Hotwire',
   },
   {
-    heading: 'ツール / インフラ',
-    items: ['Git / GitHub', 'Render', 'Vercel', 'Cloudflare Pages', 'Neon'],
+    heading: 'AI',
+    items: 'Anthropic Claude / OpenAI',
+  },
+  {
+    heading: 'INFRA',
+    items: 'Docker / Render / Vercel / Supabase / Neon / Cloudflare Pages',
+  },
+  {
+    heading: 'AUTH',
+    items: 'Devise / Rails 8 標準認証 / OAuth (PKCE) / Supabase RLS',
+  },
+  {
+    heading: 'TEST / TOOLS',
+    items: 'RSpec / Vitest / Testing Library / Git / GitHub / Figma / Claude Code',
   },
 ];
+
+export const FUTURE_STACK: string[] = ['Nuxt', 'Next.js', 'Python', 'Ruby on Rails (実務)'];

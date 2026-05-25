@@ -1,56 +1,94 @@
 ---
 import Section from './Section.astro';
 import { WORKS } from '../data/works';
+
+const layoutClasses = [
+  'md:col-span-7 md:mt-0',
+  'md:col-span-5 md:mt-16',
+  'md:col-span-6 md:-mt-8',
+  'md:col-span-6 md:mt-16',
+];
 ---
 
-<Section id="works" eyebrow="Works" title="個人開発プロジェクト">
-  <div class="grid gap-6 md:grid-cols-2">
+<Section id="works" number="03" eyebrow="制作物" title="WORKS" numberPosition="center">
+  <div class="mb-10 flex flex-wrap items-end justify-between gap-2">
+    <p class="max-w-2xl text-sm leading-relaxed text-[--color-mute] md:text-base">
+      個人開発で取り組んだ Web アプリケーション。すべて企画・設計・実装・運用を一人で担当。
+    </p>
+    <span
+      class="text-xs font-bold tracking-widest"
+      style="font-family: var(--font-mono);"
+    >
+      SELECTED [ {WORKS.length} ]
+    </span>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-8">
     {
-      WORKS.map((w) => (
-        <article class="group flex h-full flex-col rounded-lg border border-[--color-line] bg-white p-6 transition hover:border-[--color-ink]">
-          <header class="mb-4">
-            <h3 class="text-xl font-bold tracking-tight">{w.title}</h3>
-            <p class="mt-1 text-sm text-[--color-mute]">{w.tagline}</p>
-          </header>
+      WORKS.map((w, i) => (
+        <article
+          class={`group relative overflow-hidden brutal-border bg-[--color-paper] ${layoutClasses[i] ?? 'md:col-span-6'}`}
+        >
+          <div class="absolute inset-0 z-0 translate-y-full bg-[--color-ink] transition-transform duration-300 ease-in-out group-hover:translate-y-0" />
 
-          <p class="mb-5 flex-1 text-sm leading-relaxed">{w.description}</p>
-
-          <div class="mb-5">
-            <p class="mb-2 font-mono text-[10px] tracking-widest text-[--color-mute] uppercase">
-              Stack
-            </p>
-            <ul class="flex flex-wrap gap-1.5">
-              {w.stack.map((s) => (
-                <li class="rounded border border-[--color-line] px-2 py-0.5 font-mono text-[11px] text-[--color-mute]">
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <footer class="flex items-center justify-between border-t border-[--color-line] pt-4 text-xs">
-            <span class="text-[--color-mute]">{w.role}</span>
-            <div class="flex gap-3">
-              <a
-                href={w.repo}
-                target="_blank"
-                rel="noopener"
-                class="font-mono hover:underline underline-offset-4"
+          <div class="relative z-10 flex h-full flex-col p-7 group-hover:text-[--color-paper] md:p-8">
+            <div class="mb-5 flex items-center gap-3">
+              <span
+                class="text-xs font-bold tracking-widest opacity-60"
+                style="font-family: var(--font-mono);"
               >
-                GitHub ↗
-              </a>
-              {w.demo && (
+                / {String(i + 1).padStart(2, '0')}
+              </span>
+              <div class="h-px flex-1 bg-current opacity-30" />
+            </div>
+
+            <h3
+              class="display-mega text-2xl md:text-4xl"
+              style="font-family: var(--font-display);"
+            >
+              {w.title}
+            </h3>
+
+            <p class="mt-3 text-sm font-bold md:text-base">{w.tagline}</p>
+
+            <p class="mt-5 flex-1 text-sm leading-relaxed">{w.description}</p>
+
+            <div class="mt-6 border-l-[3px] border-current pl-3 opacity-90">
+              <p
+                class="text-[10px] font-bold uppercase tracking-widest opacity-70"
+                style="font-family: var(--font-mono);"
+              >
+                Stack
+              </p>
+              <p class="mt-1 text-xs leading-relaxed md:text-sm">{w.stack.join(' / ')}</p>
+            </div>
+
+            <footer class="mt-7 flex flex-wrap items-center justify-between gap-3 border-t-[3px] border-current pt-4">
+              <span class="text-xs opacity-70">{w.role}</span>
+              <div class="flex gap-2">
                 <a
-                  href={w.demo}
+                  href={w.repo}
                   target="_blank"
                   rel="noopener"
-                  class="font-mono hover:underline underline-offset-4"
+                  class="border-2 border-current px-3 py-1.5 text-xs font-bold hover:bg-current hover:text-[--color-ink] group-hover:hover:text-[--color-paper] group-hover:hover:bg-[--color-paper]"
+                  style="font-family: var(--font-mono);"
                 >
-                  Demo ↗
+                  GITHUB ↗
                 </a>
-              )}
-            </div>
-          </footer>
+                {w.demo && (
+                  <a
+                    href={w.demo}
+                    target="_blank"
+                    rel="noopener"
+                    class="border-2 border-current px-3 py-1.5 text-xs font-bold hover:bg-current hover:text-[--color-ink] group-hover:hover:text-[--color-paper] group-hover:hover:bg-[--color-paper]"
+                    style="font-family: var(--font-mono);"
+                  >
+                    VISIT ↗
+                  </a>
+                )}
+              </div>
+            </footer>
+          </div>
         </article>
       ))
     }

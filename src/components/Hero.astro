@@ -2,31 +2,60 @@
 import { SOCIAL } from '../consts';
 ---
 
-<section class="mx-auto max-w-5xl px-6 pt-20 pb-24 md:pt-28 md:pb-32">
-  <p class="mb-6 font-mono text-xs tracking-widest text-[--color-mute] uppercase">
-    Portfolio / masagin
-  </p>
-  <h1 class="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-    課題の本質を掘り当て、<br class="hidden md:block" />技術で解決する<span class="text-[--color-mute]">橋渡しエンジニア。</span>
-  </h1>
-  <p class="mt-8 max-w-2xl text-base leading-relaxed text-[--color-mute] md:text-lg">
-    バーテンダーとカスタマーサービスで磨いた「言葉の奥にある本質を引き出す力」を、これから Web 開発の現場で活かしていきます。
-    Ruby on Rails を軸に、Nuxt / Next.js / Python へ広げ、要件定義から実装までを担えるフルスタックを目指しています。
-  </p>
-  <div class="mt-10 flex flex-wrap items-center gap-4">
-    <a
-      href="#works"
-      class="inline-flex items-center gap-2 rounded-full bg-[--color-ink] px-6 py-3 text-sm font-medium text-[--color-paper] transition hover:opacity-85"
-    >
-      Works を見る →
-    </a>
-    <a
-      href={SOCIAL.github}
-      target="_blank"
-      rel="noopener"
-      class="inline-flex items-center gap-2 rounded-full border border-[--color-ink] px-6 py-3 text-sm font-medium transition hover:bg-[--color-ink] hover:text-[--color-paper]"
-    >
-      GitHub
-    </a>
+<section class="mx-auto max-w-7xl px-5 pt-8 md:px-10 md:pt-10">
+  <div class="brutal-border overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1545379432-67c79ecfc6e0?auto=format&fit=crop&w=1800&q=80"
+      alt="ブルータリスト建築（Habitat 67, Montreal）"
+      class="h-[260px] w-full object-cover grayscale contrast-125 md:h-[520px]"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+</section>
+
+<section class="relative mx-auto mt-10 max-w-7xl px-5 pb-10 md:mt-16 md:px-10 md:pb-20">
+  <div class="grid gap-10 md:grid-cols-12 md:gap-8">
+    <div class="md:col-span-2">
+      <p
+        class="text-sm font-bold tracking-widest text-[--color-ink]"
+        style="font-family: var(--font-mono);"
+      >
+        00 / INTRO
+      </p>
+      <div class="mt-3 h-1 w-16 bg-[--color-ink]"></div>
+    </div>
+
+    <div class="md:col-span-10">
+      <h1
+        class="display-mega text-[44px] sm:text-6xl md:text-[88px]"
+      >
+        本質を掘り当て、<br />
+        技術で<span class="bg-[--color-ink] px-3 text-[--color-paper]">解決</span>する。
+      </h1>
+
+      <p class="mt-8 max-w-2xl text-base leading-relaxed md:text-lg">
+        バーテンダーとカスタマーサービスで磨いた「言葉の奥にある本質を引き出す力」を、これから Web 開発の現場で活かしていきます。Ruby on Rails を軸に、Nuxt / Next.js / Python へ広げ、要件定義から実装までを担えるフルスタックを目指しています。
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-4">
+        <a
+          href="#works"
+          class="brutal-border inline-flex items-center gap-2 bg-[--color-ink] px-6 py-3 text-sm font-bold text-[--color-paper] hover:bg-[--color-paper] hover:text-[--color-ink]"
+          style="font-family: var(--font-mono);"
+        >
+          制作物を見る →
+        </a>
+        <a
+          href={SOCIAL.github}
+          target="_blank"
+          rel="noopener"
+          class="brutal-border inline-flex items-center gap-2 px-6 py-3 text-sm font-bold hover:bg-[--color-ink] hover:text-[--color-paper]"
+          style="font-family: var(--font-mono);"
+        >
+          GITHUB ↗
+        </a>
+      </div>
+    </div>
   </div>
 </section>

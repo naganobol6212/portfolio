@@ -1,0 +1,71 @@
+---
+import Section from './Section.astro';
+
+const rows = [
+  {
+    role: 'BARTENDER',
+    period: '前職',
+    focus: '相手を観て・聴いて・好みを引き出して、最適な一杯を提案する。',
+  },
+  {
+    role: 'CUSTOMER SERVICE',
+    period: '前職',
+    focus:
+      '約 50,000 件の対応。エスカレーション専任として、背景を掘って本質課題を見抜き、最善の解決策を提案する。',
+  },
+  {
+    role: 'ENGINEER',
+    period: '現在 → これから',
+    focus:
+      'クライアントの言語化できない課題を引き出し、技術で解決策を形にする。要件定義から実装までを担う橋渡し役。',
+  },
+];
+---
+
+<Section id="experience" number="02" eyebrow="経歴" title="EXPERIENCE" numberPosition="right">
+  <p class="mb-8 max-w-3xl text-sm leading-relaxed text-[--color-mute] md:text-base">
+    バーテンダー / カスタマーサービス / エンジニア。業界は違えど、やっている事の本質構造は同じ。
+    <strong class="font-bold text-[--color-ink]">観る → 聴く → 本質を掘る → 解決を提案する。</strong>
+  </p>
+
+  <div class="brutal-border bg-[--color-paper]">
+    <div
+      class="grid grid-cols-12 brutal-border-b bg-[--color-ink] px-5 py-4 text-xs font-bold uppercase tracking-widest text-[--color-paper] md:px-6"
+      style="font-family: var(--font-mono);"
+    >
+      <div class="col-span-4">ROLE</div>
+      <div class="col-span-2 hidden md:block">PERIOD</div>
+      <div class="col-span-8 md:col-span-6">FOCUS</div>
+    </div>
+
+    {
+      rows.map((row, i) => (
+        <div
+          class={`group grid grid-cols-12 items-start gap-2 px-5 py-6 transition-none hover:bg-[--color-ink] hover:text-[--color-paper] md:px-6 md:py-7 ${
+            i < rows.length - 1 ? 'brutal-border-b' : ''
+          }`}
+        >
+          <div
+            class="col-span-12 text-lg font-black uppercase tracking-tight transition-transform md:col-span-4 md:group-hover:translate-x-2 md:text-xl"
+            style="font-family: var(--font-display);"
+          >
+            {row.role}
+          </div>
+          <div
+            class="col-span-12 mt-1 text-xs font-bold uppercase opacity-70 md:col-span-2 md:mt-0"
+            style="font-family: var(--font-mono);"
+          >
+            {row.period}
+          </div>
+          <div class="col-span-12 mt-2 text-sm leading-relaxed md:col-span-6 md:mt-0 md:text-base">
+            {row.focus}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <p class="mt-8 max-w-3xl text-sm leading-relaxed">
+    中長期的には、技術力に加えて要件理解や課題整理の力を高め、<strong>プロジェクトマネージャーとして顧客と開発チームの橋渡しを担える立場</strong>に挑戦したいと考えています。
+  </p>
+</Section>

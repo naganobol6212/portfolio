@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-sans: "Inter", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-display: "Inter", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --color-ink: #0a0a0a;
-  --color-paper: #fafafa;
+  --color-paper: #ffffff;
   --color-mute: #6b7280;
-  --color-line: #e5e7eb;
+  --color-line: #0a0a0a;
+  --color-soft: #e8e8e3;
+  --color-surface-dim: #f4f4ef;
 }
 
 html {
@@ -21,6 +24,49 @@ body {
   font-family: var(--font-sans);
   font-feature-settings: "palt";
   letter-spacing: 0.01em;
+}
+
+.brutal-border {
+  border: 3px solid var(--color-ink);
+}
+
+.brutal-border-b {
+  border-bottom: 3px solid var(--color-ink);
+}
+
+.brutal-border-t {
+  border-top: 3px solid var(--color-ink);
+}
+
+.eyebrow-chip {
+  display: inline-block;
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+}
+
+.section-bg-number {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--color-soft);
+  user-select: none;
+  pointer-events: none;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  z-index: 0;
+}
+
+.display-mega {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
 }
 
 ::selection {

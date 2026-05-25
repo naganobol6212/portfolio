@@ -2,78 +2,57 @@
 import Section from './Section.astro';
 ---
 
-<Section id="about" eyebrow="About" title="自己紹介">
-  <div class="grid gap-12 md:grid-cols-5">
-    <div class="md:col-span-3 space-y-5 text-[15px] leading-relaxed">
-      <p>
-        はじめまして、<strong>masagin</strong> です。バーテンダーとカスタマーサービスという 2 つの異なる業界を経て、Web エンジニアとしてのキャリアをスタートします。
+<Section id="about" number="01" eyebrow="自己紹介" title="ABOUT" numberPosition="left">
+  <div class="grid gap-12 md:grid-cols-12">
+    <div class="md:col-span-7">
+      <p class="brutal-border-l border-l-[6px] border-[--color-ink] pl-5 text-xl font-bold leading-relaxed md:text-2xl">
+        相手の言葉の奥にある本質的な課題を掘り当て、最善の解決策を提案する。これがエンジニアとしての私の中核です。
       </p>
-      <p>
-        前職のカスタマーサービスでは、約 5 万件の顧客対応のうち、通常では解決できない複雑なエスカレーション案件を専任で担当してきました。「なぜその問い合わせに至ったのか」という背景まで掘り下げることで、表面的なやり取りでは見えない本質的な課題を特定し、最適な解決策を提案してきました。
-      </p>
-      <p>
-        バーテンダー時代も同じです。お客様の話を聴き、その場の空気を読み、言葉にされていない好みを引き出して最適な一杯を提案してきました。業界は違っても、やっていることの構造は同じでした。
-      </p>
-      <p>
-        この「相手の言葉の奥にある本質を引き出す力」を、これからは要件定義やヒアリングの場面で活かしたい。クライアントが語る「欲しいシステム」の奥にある本当の課題を引き出し、技術で解決策を形にする。そんな <em>橋渡し役</em> になりたいと考えています。
-      </p>
-    </div>
 
-    <aside class="md:col-span-2">
-      <div class="rounded-lg border border-[--color-line] bg-white p-6">
-        <p class="mb-4 font-mono text-xs tracking-widest text-[--color-mute] uppercase">
-          3 つの経験に共通する本質
+      <div class="mt-8 space-y-5 text-[15px] leading-relaxed">
+        <p>
+          前職のカスタマーサービスでは、約 5 万件の対応のうち、通常では解決できない複雑なエスカレーション案件を専任で担当してきました。「なぜその問い合わせに至ったのか」という背景まで掘り下げることで、表面的なやり取りでは見えない本質的な課題を特定し、最適な解決策を提案してきました。
         </p>
-        <ul class="space-y-4 text-sm leading-relaxed">
-          <li>
-            <p class="font-semibold">バーテンダー</p>
-            <p class="text-[--color-mute]">観て・聴いて・好みを引き出して、最適な一杯を提案</p>
-          </li>
-          <li>
-            <p class="font-semibold">カスタマーサービス</p>
-            <p class="text-[--color-mute]">背景を掘って・本質課題を見抜き、最善の解決策を提案</p>
-          </li>
-          <li>
-            <p class="font-semibold">エンジニア（目指す姿）</p>
-            <p class="text-[--color-mute]">言語化できない課題を引き出し、技術で解決策を提案</p>
-          </li>
-        </ul>
-        <p class="mt-5 border-t border-[--color-line] pt-4 text-xs text-[--color-mute]">
-          スキルの転用ではなく、本質的な動き方そのもの。
+        <p>
+          バーテンダー時代も同じです。お客様の話を聴き、その場の空気を読み、言葉にされていない好みを引き出して最適な一杯を提案してきました。業界は違っても、やっていることの構造は同じでした。
+        </p>
+        <p>
+          この力を、これからは要件定義やヒアリングの場面で活かしたい。クライアントが語る「欲しいシステム」の奥にある本当の課題を引き出し、技術で解決策を形にする。そんな <em class="not-italic font-bold">橋渡し役</em> になりたいと考えています。
         </p>
       </div>
-    </aside>
-  </div>
+    </div>
 
-  <div class="mt-16">
-    <h3 class="mb-6 font-mono text-xs tracking-widest text-[--color-mute] uppercase">
-      自分について
-    </h3>
-    <ul class="grid gap-x-10 gap-y-4 text-sm md:grid-cols-2">
-      <li class="border-l-2 border-[--color-ink] pl-4">
-        <p class="font-semibold">発言する前に深く考える慎重さ</p>
-        <p class="text-[--color-mute]">突発的に発言しない・受け身に見えても、思考は走っている。</p>
-      </li>
-      <li class="border-l-2 border-[--color-ink] pl-4">
-        <p class="font-semibold">一度深く入った相手とは長期的に</p>
-        <p class="text-[--color-mute]">浅く広くは苦手。信頼関係を時間をかけて築く。</p>
-      </li>
-      <li class="border-l-2 border-[--color-ink] pl-4">
-        <p class="font-semibold">研究型・考えてから発信</p>
-        <p class="text-[--color-mute]">表面的な情報に流されず、本質を探求してから動く。</p>
-      </li>
-      <li class="border-l-2 border-[--color-ink] pl-4">
-        <p class="font-semibold">一点集中型</p>
-        <p class="text-[--color-mute]">重要な課題に対して圧倒的な集中力を発揮する。</p>
-      </li>
-      <li class="border-l-2 border-[--color-ink] pl-4">
-        <p class="font-semibold">突出した知的好奇心</p>
-        <p class="text-[--color-mute]">新しい技術・課題への探究心が、行動の原動力。</p>
-      </li>
-      <li class="border-l-2 border-[--color-ink] pl-4">
-        <p class="font-semibold">中長期的にはマネジメントへ</p>
-        <p class="text-[--color-mute]">傾聴力 × 開発スキルで、顧客と開発の橋渡しを担う。</p>
-      </li>
-    </ul>
+    <aside class="md:col-span-5">
+      <div class="brutal-border bg-[--color-paper] p-6">
+        <p
+          class="mb-5 text-xs font-bold tracking-widest"
+          style="font-family: var(--font-mono);"
+        >
+          / SELF
+        </p>
+        <ul class="space-y-4 text-sm leading-relaxed">
+          <li class="brutal-border-b pb-3">
+            <p class="font-bold">発言する前に深く考える慎重さ</p>
+            <p class="mt-1 text-[--color-mute]">思考は走っているが、軽々しくは発しない。</p>
+          </li>
+          <li class="brutal-border-b pb-3">
+            <p class="font-bold">一度深く入った相手とは長期的に</p>
+            <p class="mt-1 text-[--color-mute]">浅く広くは苦手。信頼関係を時間をかけて築く。</p>
+          </li>
+          <li class="brutal-border-b pb-3">
+            <p class="font-bold">研究型・考えてから発信</p>
+            <p class="mt-1 text-[--color-mute]">表面的な情報に流されず、本質を探求してから動く。</p>
+          </li>
+          <li class="brutal-border-b pb-3">
+            <p class="font-bold">一点集中型</p>
+            <p class="mt-1 text-[--color-mute]">重要な課題には圧倒的な集中力を発揮する。</p>
+          </li>
+          <li>
+            <p class="font-bold">突出した知的好奇心</p>
+            <p class="mt-1 text-[--color-mute]">新しい技術・課題への探究心が、行動の原動力。</p>
+          </li>
+        </ul>
+      </div>
+    </aside>
   </div>
 </Section>
