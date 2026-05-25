@@ -1,0 +1,62 @@
+media:
+  - name: images
+    label: 画像
+    input: public/images
+    output: /images
+    extensions: [png, jpg, jpeg, webp, gif, svg, avif]
+    categories: [image]
+
+content:
+  - name: blog
+    label: ブログ記事
+    path: src/content/blog
+    type: collection
+    format: yaml-frontmatter
+    extension: md
+    filename: "{primary}.md"
+    view:
+      fields: [title, pubDate, draft, tags]
+      primary: title
+      sort: [pubDate, title]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - name: title
+        label: タイトル
+        type: string
+        required: true
+      - name: description
+        label: 説明（一覧・OGP に使用）
+        type: text
+        required: true
+        options:
+          rows: 3
+      - name: pubDate
+        label: 公開日
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+          time: false
+      - name: updatedDate
+        label: 更新日（省略可）
+        type: date
+        required: false
+        options:
+          format: yyyy-MM-dd
+          time: false
+      - name: tags
+        label: タグ
+        type: string
+        list:
+          min: 0
+      - name: draft
+        label: 下書き（チェックすると公開されません）
+        type: boolean
+        default: false
+      - name: body
+        label: 本文（Markdown）
+        type: text
+        options:
+          format: markdown

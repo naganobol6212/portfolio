@@ -38,6 +38,10 @@ body {
   border-top: 3px solid var(--color-ink);
 }
 
+.brutal-border-l {
+  border-left: 3px solid var(--color-ink);
+}
+
 .eyebrow-chip {
   display: inline-block;
   background-color: var(--color-ink);
@@ -75,69 +79,149 @@ body {
 }
 
 .prose-ja {
-  line-height: 1.9;
+  line-height: 1.95;
+  font-size: 1rem;
+}
+
+.prose-ja > * + * {
+  margin-top: 1.4rem;
 }
 
 .prose-ja h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--color-line);
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-top: 3rem;
   padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--color-ink);
 }
 
 .prose-ja h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-top: 2.25rem;
+  padding-left: 0.75rem;
+  border-left: 6px solid var(--color-ink);
 }
 
-.prose-ja p {
-  margin-bottom: 1.25rem;
+.prose-ja h4 {
+  font-weight: 700;
+  margin-top: 1.75rem;
 }
 
 .prose-ja a {
   color: var(--color-ink);
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.prose-ja a:hover {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  text-decoration: none;
+}
+
+.prose-ja strong {
+  font-weight: 800;
 }
 
 .prose-ja code {
-  background-color: #f3f4f6;
+  background-color: var(--color-surface-dim);
   padding: 0.15rem 0.4rem;
-  border-radius: 0.25rem;
   font-family: var(--font-mono);
-  font-size: 0.9em;
+  font-size: 0.88em;
+  border: 1px solid var(--color-ink);
 }
 
 .prose-ja pre {
-  background-color: #0a0a0a;
-  color: #fafafa;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  padding: 1.1rem 1.25rem;
+  border: 3px solid var(--color-ink);
   overflow-x: auto;
-  margin: 1.5rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  line-height: 1.6;
 }
 
 .prose-ja pre code {
   background: transparent;
   padding: 0;
+  border: 0;
   color: inherit;
 }
 
 .prose-ja ul,
 .prose-ja ol {
-  margin: 1rem 0 1.25rem 1.5rem;
+  padding-left: 1.5rem;
 }
 
-.prose-ja ul { list-style: disc; }
-.prose-ja ol { list-style: decimal; }
+.prose-ja ul > li {
+  list-style: none;
+  position: relative;
+}
+
+.prose-ja ul > li::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 0.85em;
+  width: 0.6rem;
+  height: 3px;
+  background: var(--color-ink);
+}
+
+.prose-ja ol {
+  list-style: decimal;
+}
+
+.prose-ja li + li {
+  margin-top: 0.4rem;
+}
 
 .prose-ja blockquote {
-  border-left: 3px solid var(--color-ink);
-  padding-left: 1rem;
-  margin: 1.5rem 0;
-  color: var(--color-mute);
+  border-left: 6px solid var(--color-ink);
+  background: var(--color-surface-dim);
+  padding: 0.9rem 1.1rem;
+  font-weight: 600;
+}
+
+.prose-ja blockquote > * + * {
+  margin-top: 0.5rem;
+}
+
+.prose-ja hr {
+  border: 0;
+  border-top: 3px solid var(--color-ink);
+  margin: 2.5rem 0;
+}
+
+.prose-ja img {
+  border: 3px solid var(--color-ink);
+}
+
+.prose-ja table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid var(--color-ink);
+}
+
+.prose-ja th,
+.prose-ja td {
+  border: 1px solid var(--color-ink);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+}
+
+.prose-ja th {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
