@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Works from '../components/Works.astro';
+import Contact from '../components/Contact.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout>
+  <Hero />
+  <About />
+  <Skills />
+  <Works />
+
+  <section id="latest-posts" class="mx-auto max-w-5xl px-6 py-20 md:py-28">
+    <div class="mb-12 flex items-baseline justify-between border-b border-[--color-line] pb-4">
+      <div>
+        <p class="font-mono text-xs tracking-widest text-[--color-mute] uppercase">Blog</p>
+        <h2 class="mt-2 text-2xl font-bold tracking-tight md:text-3xl">最新の記事</h2>
+      </div>
+      <a href="/blog" class="text-sm text-[--color-mute] hover:text-[--color-ink]">すべて見る →</a>
+    </div>
+
+    {
+      posts.length === 0 ? (
+        <p class="text-sm text-[--color-mute]">準備中です。</p>
+      ) : (
+        <ul class="divide-y divide-[--color-line] border-y border-[--color-line]">
+          {posts.map((post) => (
+            <li>
+              <a
+                href={`/blog/${post.id}`}
+                class="flex flex-col gap-1 py-5 transition hover:bg-white md:flex-row md:items-baseline md:gap-6"
+              >
+                <time
+                  datetime={post.data.pubDate.toISOString()}
+                  class="font-mono text-xs text-[--color-mute] md:w-28"
+                >
+                  {post.data.pubDate.toISOString().slice(0, 10)}
+                </time>
+                <span class="flex-1 font-medium">{post.data.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+
+  <Contact />
+</BaseLayout>

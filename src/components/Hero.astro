@@ -1,0 +1,32 @@
+---
+import { SOCIAL } from '../consts';
+---
+
+<section class="mx-auto max-w-5xl px-6 pt-20 pb-24 md:pt-28 md:pb-32">
+  <p class="mb-6 font-mono text-xs tracking-widest text-[--color-mute] uppercase">
+    Portfolio / masagin
+  </p>
+  <h1 class="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+    課題の本質を掘り当て、<br class="hidden md:block" />技術で解決する<span class="text-[--color-mute]">橋渡しエンジニア。</span>
+  </h1>
+  <p class="mt-8 max-w-2xl text-base leading-relaxed text-[--color-mute] md:text-lg">
+    バーテンダーとカスタマーサービスで磨いた「言葉の奥にある本質を引き出す力」を、これから Web 開発の現場で活かしていきます。
+    Ruby on Rails を軸に、Nuxt / Next.js / Python へ広げ、要件定義から実装までを担えるフルスタックを目指しています。
+  </p>
+  <div class="mt-10 flex flex-wrap items-center gap-4">
+    <a
+      href="#works"
+      class="inline-flex items-center gap-2 rounded-full bg-[--color-ink] px-6 py-3 text-sm font-medium text-[--color-paper] transition hover:opacity-85"
+    >
+      Works を見る →
+    </a>
+    <a
+      href={SOCIAL.github}
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center gap-2 rounded-full border border-[--color-ink] px-6 py-3 text-sm font-medium transition hover:bg-[--color-ink] hover:text-[--color-paper]"
+    >
+      GitHub
+    </a>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+---
+import Section from './Section.astro';
+import { WORKS } from '../data/works';
+---
+
+<Section id="works" eyebrow="Works" title="個人開発プロジェクト">
+  <div class="grid gap-6 md:grid-cols-2">
+    {
+      WORKS.map((w) => (
+        <article class="group flex h-full flex-col rounded-lg border border-[--color-line] bg-white p-6 transition hover:border-[--color-ink]">
+          <header class="mb-4">
+            <h3 class="text-xl font-bold tracking-tight">{w.title}</h3>
+            <p class="mt-1 text-sm text-[--color-mute]">{w.tagline}</p>
+          </header>
+
+          <p class="mb-5 flex-1 text-sm leading-relaxed">{w.description}</p>
+
+          <div class="mb-5">
+            <p class="mb-2 font-mono text-[10px] tracking-widest text-[--color-mute] uppercase">
+              Stack
+            </p>
+            <ul class="flex flex-wrap gap-1.5">
+              {w.stack.map((s) => (
+                <li class="rounded border border-[--color-line] px-2 py-0.5 font-mono text-[11px] text-[--color-mute]">
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <footer class="flex items-center justify-between border-t border-[--color-line] pt-4 text-xs">
+            <span class="text-[--color-mute]">{w.role}</span>
+            <div class="flex gap-3">
+              <a
+                href={w.repo}
+                target="_blank"
+                rel="noopener"
+                class="font-mono hover:underline underline-offset-4"
+              >
+                GitHub ↗
+              </a>
+              {w.demo && (
+                <a
+                  href={w.demo}
+                  target="_blank"
+                  rel="noopener"
+                  class="font-mono hover:underline underline-offset-4"
+                >
+                  Demo ↗
+                </a>
+              )}
+            </div>
+          </footer>
+        </article>
+      ))
+    }
+  </div>
+</Section>

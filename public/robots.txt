@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://masagin.pages.dev/sitemap-index.xml

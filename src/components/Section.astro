@@ -1,0 +1,20 @@
+---
+type Props = {
+  id: string;
+  eyebrow: string;
+  title: string;
+};
+
+const { id, eyebrow, title } = Astro.props;
+---
+
+<section id={id} class="mx-auto max-w-5xl px-6 py-20 md:py-28">
+  <div class="mb-12 flex items-baseline justify-between border-b border-[--color-line] pb-4">
+    <div>
+      <p class="font-mono text-xs tracking-widest text-[--color-mute] uppercase">{eyebrow}</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
+    </div>
+    <a href={`#${id}`} class="font-mono text-xs text-[--color-mute] hover:text-[--color-ink]">#{id}</a>
+  </div>
+  <slot />
+</section>

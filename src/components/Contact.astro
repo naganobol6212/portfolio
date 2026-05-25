@@ -1,0 +1,31 @@
+---
+import Section from './Section.astro';
+import { SOCIAL } from '../consts';
+---
+
+<Section id="contact" eyebrow="Contact" title="お問い合わせ">
+  <div class="grid gap-10 md:grid-cols-2 md:items-center">
+    <div class="space-y-4 text-[15px] leading-relaxed">
+      <p>
+        現在は GitHub 経由でのご連絡を受け付けています。お仕事のご相談・技術的な議論・カジュアルな雑談、いずれも歓迎です。
+      </p>
+      <p class="text-sm text-[--color-mute]">
+        SNS や問い合わせフォームは順次拡充予定です。
+      </p>
+    </div>
+    <div class="rounded-lg border border-[--color-line] bg-white p-8">
+      <a
+        href={SOCIAL.github}
+        target="_blank"
+        rel="noopener"
+        class="group flex items-center justify-between"
+      >
+        <div>
+          <p class="font-mono text-xs tracking-widest text-[--color-mute] uppercase">GitHub</p>
+          <p class="mt-1 text-lg font-bold group-hover:underline underline-offset-4">@naganobol6212</p>
+        </div>
+        <span aria-hidden="true" class="text-2xl">↗</span>
+      </a>
+    </div>
+  </div>
+</Section>

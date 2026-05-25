@@ -1,0 +1,16 @@
+---
+import { SITE, SOCIAL } from '../consts';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[--color-line] mt-24">
+  <div class="mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 px-6 py-10 text-sm text-[--color-mute] md:flex-row md:items-center">
+    <p>© {year} {SITE.author}</p>
+    <div class="flex items-center gap-5">
+      <a href={SOCIAL.github} target="_blank" rel="noopener" class="hover:text-[--color-ink]">
+        GitHub
+      </a>
+      <a href="/rss.xml" class="hover:text-[--color-ink]">RSS</a>
+    </div>
+  </div>
+</footer>

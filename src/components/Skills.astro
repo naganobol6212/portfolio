@@ -1,0 +1,24 @@
+---
+import Section from './Section.astro';
+import { SKILLS } from '../data/skills';
+---
+
+<Section id="skills" eyebrow="Skills" title="技術スタック">
+  <div class="grid gap-10 md:grid-cols-3">
+    {
+      SKILLS.map((group) => (
+        <div>
+          <h3 class="mb-3 text-lg font-bold">{group.heading}</h3>
+          {group.note && <p class="mb-4 text-xs leading-relaxed text-[--color-mute]">{group.note}</p>}
+          <ul class="flex flex-wrap gap-2">
+            {group.items.map((item) => (
+              <li class="rounded-md border border-[--color-line] bg-white px-3 py-1.5 font-mono text-xs">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</Section>

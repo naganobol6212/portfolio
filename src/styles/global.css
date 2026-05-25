@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-ink: #0a0a0a;
+  --color-paper: #fafafa;
+  --color-mute: #6b7280;
+  --color-line: #e5e7eb;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "palt";
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.prose-ja {
+  line-height: 1.9;
+}
+
+.prose-ja h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-line);
+  padding-bottom: 0.5rem;
+}
+
+.prose-ja h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-ja p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-ja a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-ja code {
+  background-color: #f3f4f6;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.prose-ja pre {
+  background-color: #0a0a0a;
+  color: #fafafa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose-ja pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.prose-ja ul,
+.prose-ja ol {
+  margin: 1rem 0 1.25rem 1.5rem;
+}
+
+.prose-ja ul { list-style: disc; }
+.prose-ja ol { list-style: decimal; }
+
+.prose-ja blockquote {
+  border-left: 3px solid var(--color-ink);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--color-mute);
+}

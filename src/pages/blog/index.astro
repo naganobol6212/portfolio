@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<BaseLayout
+  title="Blog"
+  description="masagin の技術ブログ。個人開発の知見、Rails / Next.js / Nuxt を行き来する中で見えてきたこと、課題の本質を技術で解く話などを書いています。"
+  path="/blog"
+>
+  <section class="mx-auto max-w-5xl px-6 pt-20 pb-12 md:pt-28">
+    <p class="font-mono text-xs tracking-widest text-[--color-mute] uppercase">Blog</p>
+    <h1 class="mt-2 text-3xl font-bold tracking-tight md:text-4xl">記事一覧</h1>
+    <p class="mt-4 max-w-2xl text-sm text-[--color-mute]">
+      個人開発の知見、技術選定の理由、課題を技術で解く話などを書いていきます。
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-6 pb-24">
+    {
+      posts.length === 0 ? (
+        <p class="text-sm text-[--color-mute]">まだ記事がありません。</p>
+      ) : (
+        <ul class="divide-y divide-[--color-line] border-y border-[--color-line]">
+          {posts.map((post) => (
+            <li>
+              <a
+                href={`/blog/${post.id}`}
+                class="flex flex-col gap-2 py-6 transition hover:bg-white md:flex-row md:items-baseline md:gap-6"
+              >
+                <time
+                  datetime={post.data.pubDate.toISOString()}
+                  class="font-mono text-xs text-[--color-mute] md:w-28"
+                >
+                  {post.data.pubDate.toISOString().slice(0, 10)}
+                </time>
+                <div class="flex-1">
+                  <p class="font-semibold">{post.data.title}</p>
+                  <p class="mt-1 text-sm text-[--color-mute]">{post.data.description}</p>
+                  {post.data.tags.length > 0 && (
+                    <ul class="mt-2 flex flex-wrap gap-1.5">
+                      {post.data.tags.map((tag) => (
+                        <li class="font-mono text-[11px] text-[--color-mute]">#{tag}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</BaseLayout>
