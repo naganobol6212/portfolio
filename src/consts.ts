@@ -3,7 +3,7 @@ export const SITE = {
   description:
     '課題の本質を掘り当て、技術で解決する橋渡しエンジニア MASAGIN のポートフォリオ。Ruby on Rails を軸に、Nuxt / Next.js / Python へ広げるフルスタック志向。',
   author: 'MASAGIN',
-  url: 'https://masagin.pages.dev',
+  url: 'https://portfolio.naganobol6212.workers.dev',
   ogImage: '/og.png',
   locale: 'ja_JP',
 } as const;

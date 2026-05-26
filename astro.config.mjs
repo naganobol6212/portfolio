@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
-  site: 'https://masagin.pages.dev',
+  site: 'https://portfolio.naganobol6212.workers.dev',
   integrations: [sitemap()],
 
   vite: {

@@ -58,7 +58,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <text x="1128" y="572" text-anchor="end"
         font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
         font-size="18" font-weight="700" fill="#ffffff" letter-spacing="3">
-    masagin.pages.dev
+    portfolio.naganobol6212.workers.dev
   </text>
 </svg>`;
 

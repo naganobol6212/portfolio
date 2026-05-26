@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://masagin.pages.dev/sitemap-index.xml
+Sitemap: https://portfolio.naganobol6212.workers.dev/sitemap-index.xml
